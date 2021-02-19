@@ -108,16 +108,16 @@ React Native 会根据运行平台的不同自动引入正确对应的组件。
 比如在你的项目中存在如下的两个文件:
 
 ```sh
-Container.js # 由Webpack, Rollup 或者其他打包工具打包的文件
-Container.native.js # 由 React Native bundler 为ios和android 打包的文件
+Container.js # 由 Webpack, Rollup 或者其他打包工具打包的文件
+Container.native.js # 由 React Native 自带打包工具(Metro) 为ios和android 打包的文件
 ```
 
-你仍然可以用这种没有 .native. 后缀的文件名来引用:
+在引用时并不需要添加`.native.`后缀:
 
 ```jsx
 import Container from './Container';
 ```
 
-**提示:** 为避免在构建后的生产环境的代码中出现多余代码，要记得在你的打包配置中配置忽略.native.js结尾的文件, 这样还可以减少打包后文件的大小。
+**提示:** 为避免在构建后的 Web 生产环境的代码中出现多余代码，要记得在你的 Web 打包工具中配置忽略`.native.js`结尾的文件, 这样可以减少打包后文件的大小。
 
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm&type=Users)(100.00%)
